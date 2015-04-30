@@ -1,6 +1,8 @@
 require 'simpel/version'
 require 'simpel/tree'
 require 'simpel/definition_proxy'
+
+# This patch allows null keys to be serialized
 require 'active_model/serialization'
 
 module Simpel
@@ -11,7 +13,7 @@ module Simpel
   end
 
   def self.serialize(model, format)
-    model.to_json(@registry[format].to_json)
+    model.as_json(@registry[format].to_json)
   end
 
   def self.define(&block)
