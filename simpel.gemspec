@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
 
   spec.name          = 'simpel'
   spec.version       = Simpel::VERSION
-  spec.authors       = ['Wilson Silva']
-  spec.email         = ['me@wilsonsilva.net']
+  spec.authors       = ['Wilson Silva', 'Danny Hawkins']
+  spec.email         = ['me@wilsonsilva.net', 'danny@quiqup.com']
 
   spec.summary       = 'Simple DSL to serialize objects and their associations into JSON'
   spec.description   = 'A lightweight alternative to Active Model Serializers'

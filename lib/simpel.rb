@@ -16,9 +16,15 @@ module Simpel
     model.as_json(@registry[format].to_json)
   end
 
+  def self.clear_registry
+    @registry = {}
+  end
+
   def self.define(&block)
     definition_proxy = DefinitionProxy.new
     definition_proxy.instance_eval(&block)
   end
 
 end
+
+require 'simpel/railtie' if defined?(::Rails)
