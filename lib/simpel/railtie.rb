@@ -1,11 +1,11 @@
 module Simpel
   class Railtie < ::Rails::Railtie
     initializer "simpel.registry" do
-      Rails.logger.debug 'Registry'
+      Simpel.clear_registry
     end
 
     config.to_prepare do
-      Rails.logger.debug 'Simpel prepare'
+      Simpel.reload! unless Simpel.registry.empty?
     end
   end
 end

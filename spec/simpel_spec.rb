@@ -97,5 +97,9 @@ describe Simpel do
         expect(Simpel.registry).to eq({})
       end
     end
+
+    describe '.reload!' do
+      pending 'it reloads the source formatter files'
+    end
   end
 end
