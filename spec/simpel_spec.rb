@@ -78,4 +78,28 @@ describe Simpel do
     it 'generates json' do
     end
   end
+
+  context 'Class Methods' do
+
+    describe '.clear_registry' do
+
+      it 'clears the registry' do
+        Simpel.define do
+          root :book do
+            has_many :pages do
+              methods :number, :body
+            end
+          end
+        end
+
+        Simpel.clear_registry
+
+        expect(Simpel.registry).to eq({})
+      end
+    end
+
+    describe '.reload!' do
+      pending 'it reloads the source formatter files'
+    end
+  end
 end
